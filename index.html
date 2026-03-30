@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,8 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: linear-gradient(180deg, #0f0f11 0%, #1a1a1f 100%);
@@ -25,124 +34,336 @@
 
         /* ===== HEADER ===== */
         .scarcity-header {
-            position: sticky; top: 0; z-index: 990; width: 100%;
-            background: rgba(15, 15, 17, 0.95); backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 990;
+            width: 100%;
+            background: rgba(15, 15, 17, 0.95);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-            padding: 12px 16px; text-align: center; font-size: 12px;
-            font-weight: 600; color: #d4af37; letter-spacing: 1px;
-            text-transform: uppercase; animation: subtle-pulse 3s ease-in-out infinite;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #d4af37;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: subtle-pulse 3s ease-in-out infinite;
         }
 
-        @keyframes subtle-pulse { 0%, 100% { opacity: 0.85; } 50% { opacity: 1; } }
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 0.85; }
+            50% { opacity: 1; }
+        }
 
         /* ===== HERO ===== */
         .hero {
-            width: 100%; min-height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; padding: 60px 20px 40px;
-            text-align: center; position: relative; overflow: hidden;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
             background: linear-gradient(135deg, #0f0f11 0%, #1a1a1f 50%, #0f0f11 100%);
         }
 
         .hero::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect opacity=%220.03%22 width=%22100%22 height=%22100%22 fill=%22%23d4af37%22/%3E%3C/svg%3E');
             z-index: 0;
         }
 
         .hero-content {
-            position: relative; z-index: 2; max-width: 420px;
+            position: relative;
+            z-index: 2;
+            max-width: 420px;
             animation: fade-in-up 0.8s ease-out;
         }
 
-        @keyframes fade-in-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif; font-size: clamp(28px, 8vw, 48px);
-            font-weight: 800; line-height: 1.1; margin-bottom: 12px; color: #ffffff;
-            letter-spacing: -1px; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 8vw, 48px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            color: #ffffff;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .hero h1 .accent {
             background: linear-gradient(90deg, #d4af37 0%, #a855f7 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subheadline {
+            font-size: clamp(14px, 4vw, 16px);
+            color: #c8c8d0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.3px;
         }
 
         .cta-primary {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 16px 32px; background: linear-gradient(135deg, #d4af37 0%, #a855f7 100%);
-            color: #0f0f11; border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
-            cursor: pointer; transition: all 0.3s ease; text-decoration: none; letter-spacing: 0.5px;
-            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.25); font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #d4af37 0%, #a855f7 100%);
+            color: #0f0f11;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.25);
+            font-family: 'Inter', sans-serif;
             animation: breathe 2.5s ease-in-out infinite;
         }
 
         @keyframes breathe {
-            0%, 100% { box-shadow: 0 12px 40px rgba(212, 175, 55, 0.25), 0 0 0 0 rgba(168, 85, 247, 0.1); transform: scale(1); }
-            50% { box-shadow: 0 16px 50px rgba(212, 175, 55, 0.35), 0 0 20px rgba(168, 85, 247, 0.2); transform: scale(1.03); }
+            0%, 100% {
+                box-shadow: 0 12px 40px rgba(212, 175, 55, 0.25),
+                            0 0 0 0 rgba(168, 85, 247, 0.1);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 16px 50px rgba(212, 175, 55, 0.35),
+                            0 0 20px rgba(168, 85, 247, 0.2);
+                transform: scale(1.03);
+            }
         }
 
-        .cta-primary:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4); }
-        .cta-primary::before { content: '🔒'; }
+        .cta-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-primary::before {
+            content: '🔒';
+        }
 
         /* ===== MODAL ===== */
         .modal-overlay {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8);
-            z-index: 1000; display: none; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.3s ease; padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
         }
 
-        .modal-overlay.active { display: flex; opacity: 1; }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
 
         .modal-content {
             background: linear-gradient(180deg, rgba(26, 26, 31, 0.95) 0%, rgba(15, 15, 17, 0.95) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 16px; padding: 40px 24px;
-            max-width: 420px; width: 100%; max-height: 90vh; overflow-y: auto;
-            animation: modal-slide-up 0.4s ease-out; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 40px 24px;
+            max-width: 420px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modal-slide-up 0.4s ease-out;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
 
-        @keyframes modal-slide-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes modal-slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         .modal-close {
-            position: absolute; top: 16px; right: 16px; background: none; border: none; color: #d4af37;
-            font-size: 24px; cursor: pointer; opacity: 0.6; transition: opacity 0.2s ease; padding: 0;
-            width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: #d4af37;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            opacity: 1;
         }
 
         /* ===== QUIZ MODAL ===== */
-        .quiz-header { text-align: center; margin-bottom: 24px; }
-        .quiz-progress { font-size: 11px; color: #7a7a81; margin-bottom: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .progress-bar { width: 100%; height: 3px; background: rgba(212, 175, 55, 0.15); border-radius: 2px; margin-bottom: 16px; overflow: hidden; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #d4af37 0%, #a855f7 100%); border-radius: 2px; transition: width 0.3s ease; }
-        .quiz-question h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 16px; line-height: 1.3; }
-        .quiz-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-        
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .quiz-progress {
+            font-size: 11px;
+            color: #7a7a81;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 3px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 2px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #d4af37 0%, #a855f7 100%);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .quiz-question h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
         .quiz-option {
-            padding: 14px 16px; background: rgba(26, 26, 31, 0.8); border: 2px solid rgba(212, 175, 55, 0.2);
-            border-radius: 10px; cursor: pointer; transition: all 0.2s ease; font-size: 13px; color: #e0e0e0;
-            font-weight: 500; text-align: left;
+            padding: 14px 16px;
+            background: rgba(26, 26, 31, 0.8);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 13px;
+            color: #e0e0e0;
+            font-weight: 500;
+            text-align: left;
         }
 
         .quiz-option.selected {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
-            border-color: #d4af37; box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
         }
 
         /* ===== RESULTADO MODAL ===== */
-        .resultado-content { text-align: center; animation: fade-in-up 0.5s ease-out; }
-        .resultado-badge { display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
-        .resultado-cta {
-            width: 100%; padding: 16px; background: linear-gradient(135deg, #d4af37 0%, #a855f7 100%);
-            color: #0f0f11; border: none; border-radius: 8px; font-size: 15px; font-weight: 800; cursor: pointer;
-            transition: all 0.3s ease; font-family: 'Inter', sans-serif; box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25); margin-top: 10px;
+        .resultado-content {
+            text-align: center;
+            animation: fade-in-up 0.5s ease-out;
         }
-        .resultado-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(212, 175, 55, 0.35); }
 
-        /* ===== SEÇÕES DA LP ===== */
-        .scroll-agitation, .secret-reveal, .social-proof { width: 100%; padding: 60px 20px 80px; position: relative; }
+        .resultado-badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #d8b4fe;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .resultado-cta {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #d4af37 0%, #a855f7 100%);
+            color: #0f0f11;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+            margin-top: 10px;
+        }
+
+        .resultado-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.35);
+        }
+
+        /* ===== AGITATION E SOCIAL PROOF (Seções da LP) ===== */
+        .scroll-agitation, .secret-reveal, .social-proof {
+            width: 100%;
+            padding: 60px 20px 80px;
+            position: relative;
+        }
+        
         .scroll-agitation, .social-proof { background: #0a0a0c; }
         .secret-reveal { background: linear-gradient(180deg, rgba(26, 26, 31, 0.8) 0%, rgba(15, 15, 17, 0.8) 100%); }
-        .agitation-content, .secret-content, .proof-content { max-width: 420px; margin: 0 auto; position: relative; z-index: 2; }
-        
+
+        .agitation-content, .secret-content, .proof-content {
+            max-width: 420px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
         .pain-block { display: flex; gap: 16px; margin-bottom: 24px; }
         .pain-icon { flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); }
         .pain-text strong { display: block; color: #ffffff; margin-bottom: 4px; font-size: 14px; }
@@ -151,9 +372,16 @@
         .secret-reveal h2, .proof-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 7vw, 32px); font-weight: 800; color: #ffffff; margin-bottom: 28px; }
         .feature-card { padding: 24px; background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; margin-bottom: 16px; text-align: center; }
         .proof-item { background: rgba(26, 26, 31, 0.8); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
-        .proof-censored { background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); color: transparent; border-bottom: 2px solid #4a4a52; padding: 2px 4px; border-radius: 2px; filter: blur(3px); display: inline-block; position: relative; }
+        .proof-censored { background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); color: transparent; border-bottom: 2px solid #4a4a52; padding: 2px 4px; border-radius: 2px; filter: blur(3px); }
 
-        .caso-real-section { background: rgba(26,26,31,0.8); border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2); padding: 32px 20px; margin: 20px 0; }
+        /* ===== CASO REAL SECTION (NOVO) ===== */
+        .caso-real-section {
+            background: rgba(26,26,31,0.8);
+            border-top: 1px solid rgba(212,175,55,0.2);
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+            padding: 32px 20px;
+            margin: 20px 0;
+        }
 
         /* ===== STICKY CTA E FOOTER ===== */
         .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; background: linear-gradient(180deg, transparent, rgba(15, 15, 17, 0.95)); padding: 16px 20px 24px; backdrop-filter: blur(10px); }
@@ -167,21 +395,18 @@
         🔒 Vagas limitadas — Lote exclusivo em andamento
     </div>
 
+    <!-- ===== HERO (5 MASTERS — COM BRIDGE + URGÊNCIA + AUTORIDADE) ===== -->
     <section class="hero">
         <div class="hero-content">
             <p style="font-size: 13px; color: #a8a8b0; margin-bottom: 16px; line-height: 1.5;">
                 Enquanto você trabalha 8 horas para ganhar R$100…<br>
-                <strong style="color: #ffffff;">outras começam hoje e recebem em dólar ainda no mesmo dia.</strong>
+                <strong style="color: #ffffff;">outras estão ganhando em dólar em 40 minutos.</strong>
             </p>
 
             <h1>Ganha em <span class="accent">dólar sem se expor.</span></h1>
             
-            <p style="font-size: 12px; color: #d4af37; margin-bottom: 12px; font-weight: 600;">
-                Você pode montar tudo em poucas horas — sem experiência
-            </p>
-
             <p style="font-size: 12px; color: #d4af37; margin-bottom: 8px; font-weight: 600;">
-                O Protocolo que +3.000 mulheres usam
+                O Protocolo que 3.000 mulheres usam
             </p>
 
             <p style="font-size: 10px; color: #7a7a81; text-align: center; margin-bottom: 24px;">
@@ -189,7 +414,7 @@
             </p>
 
             <button class="cta-primary" onclick="openQuiz()">
-                Descobrir como começar hoje (leva 30s)
+                Descobrir se isso funciona pra mim (leva 30s)
             </button>
         </div>
     </section>
@@ -234,6 +459,7 @@
         </div>
     </section>
 
+    <!-- ===== CASO REAL (STAR-STORY-SOLUTION - GARY HALBERT) ===== -->
     <section class="caso-real-section">
         <div style="max-width: 420px; margin: 0 auto;">
             <p style="font-size: 10px; color: #d4af37; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
@@ -246,7 +472,7 @@
                 </p>
                 
                 <p style="font-size: 11px; color: #a8a8b0; line-height: 1.6; margin-bottom: 10px;">
-                    "Ganhava R$2.500/mês como garçonete. Hoje ganho R$5.000 a R$8.000 <strong style="color:#d4d4d8;">por semana</strong> — sem câmera no rosto, sem nome real, sem identidade. Comecei sem entender nada… e no mesmo dia já tinha gente pagando."
+                    "Ganhava R$2.500/mês como garçonete. Hoje ganho R$5.000 a R$8.000 <strong style="color:#d4d4d8;">por semana</strong> — sem câmera no rosto, sem nome real, sem identidade."
                 </p>
                 
                 <p style="font-size: 11px; color: #d8b4fe; font-style: italic;">
@@ -264,6 +490,7 @@
         <div class="proof-content">
             <h2>Resultados Reais (Validados)</h2>
             
+            <!-- ===== TAXA DE SUCESSO (CIALDINI SOCIAL PROOF) ===== -->
             <div style="background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2); border-radius: 8px; padding: 14px; margin-bottom: 24px;">
                 <p style="font-size: 10px; color: #d4af37; margin-bottom: 8px; text-transform: uppercase; font-weight: 600;">
                     📊 Taxa de Sucesso Comprovada:
@@ -288,6 +515,7 @@
         <button onclick="openQuiz()">🔒 Fazer Diagnóstico (30s)</button>
     </div>
 
+    <!-- ===== MODAL COM QUIZ + RESULTADO REFATORADO ===== -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content" id="modalContent">
             <button class="modal-close" onclick="closeQuiz()">✕</button>
@@ -301,7 +529,7 @@
     </footer>
 
     <script>
-        // ===== 1. QUIZ DATA (COM NOVA PERGUNTA 4) =====
+        // ===== 1. QUIZ DATA (7 PERGUNTAS) =====
         const quizData = [
             {
                 q: "Se nada mudar, como sua vida financeira estará daqui a 12 meses?",
@@ -331,12 +559,12 @@
                 ]
             },
             {
-                q: "Se você descobrisse um modelo onde algumas mulheres chegam a gerar renda alta em dólar… começando de forma simples e discreta… você consideraria testar?",
+                q: "E se existisse um modelo onde você ganha em dólar… sem depender de aparência perfeita?",
                 opts: [
-                    { text: "Sim, com certeza testaria", val: "alta_abertura" },
-                    { text: "Sim, se fizer sentido pra mim", val: "logica_aberta" },
-                    { text: "Talvez, ainda tenho dúvidas", val: "duvida_alta" },
-                    { text: "Não sei", val: "resistencia_alta" }
+                    { text: "Eu tentaria com certeza", val: "aberta" },
+                    { text: "Ficaria curiosa", val: "curiosa2" },
+                    { text: "Depende de como funciona", val: "logica" },
+                    { text: "Tenho dúvidas", val: "duvida" }
                 ]
             },
             {
@@ -498,129 +726,115 @@
         function classifyProfile() {
             let scores = { bloqueada: 0, frustrada: 0, pronta: 0 };
             
-            if (answers.includes('fuga') || answers.includes('resignada') || answers.includes('cetica') || answers.includes('medo') || answers.includes('insegura') || answers.includes('fria') || answers.includes('frio') || answers.includes('resistencia') || answers.includes('resistencia_alta')) scores.bloqueada += 3;
-            if (answers.includes('frustracao_alta') || answers.includes('curiosa') || answers.includes('considerando') || answers.includes('insight') || answers.includes('confusa') || answers.includes('duvida_alta')) scores.frustrada += 3;
-            if (answers.includes('aberta') || answers.includes('aceitou') || answers.includes('quente') || answers.includes('decisao') || answers.includes('alta_abertura') || answers.includes('logica_aberta')) scores.pronta += 4;
+            if (answers.includes('fuga') || answers.includes('resignada') || answers.includes('cetica') || answers.includes('medo') || answers.includes('insegura') || answers.includes('fria') || answers.includes('frio') || answers.includes('resistencia')) scores.bloqueada += 3;
+            if (answers.includes('frustracao_alta') || answers.includes('curiosa') || answers.includes('considerando') || answers.includes('insight') || answers.includes('confusa')) scores.frustrada += 3;
+            if (answers.includes('aberta') || answers.includes('aceitou') || answers.includes('quente') || answers.includes('decisao')) scores.pronta += 4;
 
             if (scores.pronta > scores.frustrada && scores.pronta > scores.bloqueada) userProfile = 'pronta';
             else if (scores.bloqueada > scores.pronta && scores.bloqueada > scores.frustrada) userProfile = 'bloqueada';
             else userProfile = 'frustrada';
         }
 
-        // ===== 7. RENDERIZAÇÃO DO RESULTADO (CRIPTOGRAFIA ANTI-BAN) =====
+        // ===== 7. RENDERIZAÇÃO DO RESULTADO (ULTRA-PERSUASIVO) =====
         function renderResult() {
             const prof = profiles[userProfile];
 
-            // Dicionário ofuscado para o Meta não barrar
-            const w = {
-                of: atob('T25seUZhbnM='),
-                cb: atob('Q2hhdHVyYmF0ZQ=='),
-                adulto: atob('bWVyY2FkbyBhZHVsdG8='),
-                fotos: atob('Zm90b3M='),
-                gringo: atob('aG9tZW5zIGFtZXJpY2Fub3M=')
-            };
-
             let html = `
                 <div class="resultado-content">
-                    <span class="resultado-badge" style="background: #ff3b3b20; border-color: #ff3b3b; color: #ff3b3b;">
-                        Análise Concluída e Aprovada
-                    </span>
+                    <span class="resultado-badge">Análise Concluída</span>
                     <h2 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #ffffff; margin-bottom: 12px;">${prof.headline}</h2>
-                    
-                    <div style="background: rgba(26,26,31,0.9); border: 1px solid rgba(255,59,59,0.3); border-left: 4px solid #ff3b3b; border-radius: 8px; padding: 18px; margin-top: 24px; margin-bottom: 24px; text-align: left;">
-                        <strong style="font-size:14px; color:#ffffff; display:block; margin-bottom:12px; text-transform: uppercase;">
-                            A Verdade Que Ninguém Te Conta:
-                        </strong>
-                        
-                        <p style="font-size:13px; color:#c8c8d0; line-height:1.6; margin-bottom:10px;">
-                            Vamos jogar limpo. O dinheiro rápido, alto e em dólar não vem de dancinha na internet. 
-                            Ele vem do <strong>${w.adulto}</strong>.
-                        </p>
+                    <p style="font-size: 13px; color: #c8c8d0; margin-bottom: 20px;">
+                        Perfil: <strong style="color: #d4af37;">${prof.emoji} ${prof.name}</strong>
+                    </p>
 
-                        <p style="font-size:13px; color:#c8c8d0; line-height:1.6; margin-bottom:10px;">
-                            Milhões de ${w.gringo} entram diariamente no <strong style="color:#d4af37;">${w.of}</strong> e no <strong style="color:#d4af37;">${w.cb}</strong> com o cartão de crédito na mão, prontos para gastar com interação e fantasia.
-                        </p>
+                    <div style="background: rgba(168, 85, 247, 0.08); border-left: 3px solid #a855f7; border-radius: 8px; padding: 14px; margin-bottom: 24px; text-align: left;">
+                        <strong style="color: #fff; font-size: 13px; display: block; margin-bottom: 6px;">💡 A Realidade:</strong>
+                        <p style="font-size: 12px; color: #c8c8d0;">${prof.agitation}</p>
+                    </div>
 
-                        <p style="font-size:14px; color:#ffffff; font-weight: bold; line-height:1.6; margin-bottom:10px;">
-                            "Mas eu tenho vergonha e não quero vender o meu corpo."
-                        </p>
+                    <p style="font-size: 16px; color: #ffffff; margin-bottom: 20px; font-weight: 700;">
+                        Você já entendeu como isso funciona.<br>
+                        <span style="color: #d4af37;">Agora falta aplicar.</span>
+                    </p>
 
-                        <p style="font-size:13px; color:#c8c8d0; line-height:1.6;">
-                            <strong>Aí é que está o segredo. Você NÃO precisa.</strong><br>
-                            O mercado hoje paga pelo mistério. Pelo que está escondido.
-                        </p>
+                    <div style="background: rgba(26,26,31,0.8); border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; padding: 16px; margin-bottom: 20px; text-align: left;">
+                        <strong style="font-size:13px; color:#c8c8d0; display:block; margin-bottom:10px;">A lógica que ninguém te explicou:</strong>
+                        <p style="font-size:12px; color:#a8a8b0; line-height:1.6;">Pessoas de outros países entram em plataformas privadas e pagam pequenas quantias em dólar por interação.</p>
+                        <p style="font-size:12px; color:#a8a8b0; line-height:1.6; margin-top:10px;">Esses pagamentos acontecem através de moedas internas, que depois são convertidas em dinheiro real.</p>
+                        <p style="font-size:12px; color:#d4d4d8; margin-top:12px; font-weight: 500;">Ou seja: enquanto aqui R$10 não compra nada… lá fora, $5–$10 por interação é normal — e isso se repete várias vezes ao dia.</p>
                     </div>
 
                     <div style="background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.25); border-radius: 8px; padding: 16px; margin-bottom: 20px; text-align: left;">
-                        <p style="font-size:13px; color:#ffffff; margin-bottom:10px;">
-                            <strong>Como o Protocolo Sombra te protege:</strong>
+                        <p style="font-size:12px; color:#ffffff; margin-bottom:10px;">
+                            <strong>Imagina isso acontecendo:</strong>
                         </p>
-                        
-                        <ul style="font-size: 12px; color: #a8a8b0; line-height: 1.6; list-style: none; padding: 0;">
-                            <li style="margin-bottom: 10px;">🛡️ <strong>O Escudo (Geoblocking):</strong> Ensinamos a apertar um botão que bloqueia o acesso de qualquer pessoa do Brasil. Seu vizinho nunca vai te achar.</li>
-                            <li style="margin-bottom: 10px;">🎭 <strong>A Fantasma:</strong> Você vai tirar ${w.fotos} e gravar vídeos focados no corpo, com ângulos onde <strong>seu rosto nunca aparece</strong>.</li>
-                            <li>💸 <strong>A Escala:</strong> Configuramos robôs que cobram $5, $10, $20 dólares por mensagens no chat. Eles pagam, você recebe na sua conta oculta.</li>
-                        </ul>
+                        <p style="font-size:12px; color:#a8a8b0;">
+                            Você está em casa… ambiente controlado… ninguém sabe quem você é.
+                        </p>
+                        <p style="font-size:12px; color:#a8a8b0; margin-top:8px;">
+                            Você entra em uma plataforma internacional… e pessoas começam a aparecer.
+                        </p>
+                        <p style="font-size:12px; color:#a8a8b0; margin-top:8px;">
+                            Uma manda $5… outra manda $10… outra manda mais.
+                        </p>
+                        <p style="font-size:12px; color:#a8a8b0; margin-top:8px;">
+                            Não porque você é famosa… mas porque você entendeu o jogo.
+                        </p>
+                        <p style="font-size:12px; color:#d4af37; margin-top:10px; font-weight: bold;">
+                            E isso acontece repetidamente… na mesma sessão.
+                        </p>
                     </div>
 
-                    <div style="background: rgba(16,185,129,0.08); border-left: 3px solid #10b981; border-radius: 8px; padding: 14px; margin-bottom: 20px; text-align: left;">
-                        <strong style="color:#ffffff; font-size:12px;">⚡ Começo imediato:</strong>
-                        <p style="font-size:12px; color:#c8c8d0; margin-top:8px; line-height:1.5;">
-                            Você não precisa de equipamentos caros nem aprovação.<br>
-                            Dá pra criar o seu perfil oculto e começar a faturar em dólar <strong>ainda hoje</strong>.
+                    <p style="font-size:11px; color:#7a7a81; margin-bottom:20px;">
+                        Isso acontece em plataformas internacionais como OnlyFans (assinatura) e transmissões com sistema de gorjetas, onde a monetização é 100% em dólar.
+                    </p>
+
+                    <div style="text-align: left; margin-bottom: 24px;">
+                        <p style="font-size:12px; color:#a8a8b0; margin-bottom:16px;">
+                            O problema é que a maioria tenta fazer isso… e falha.
+                        </p>
+                        <p style="font-size:12px; color:#a8a8b0; margin-bottom:16px;">
+                            Porque não entende a estrutura por trás.
+                        </p>
+                        <p style="font-size:12px; color:#a8a8b0; margin-bottom:20px;">
+                            E é exatamente isso que o <strong style="color:#d4af37;">Protocolo Sombra</strong> resolve.
                         </p>
                     </div>
 
                     <div style="background: rgba(168,85,247,0.08); border-left: 3px solid #a855f7; border-radius: 8px; padding: 16px; margin-bottom: 20px; text-align: left;">
-                        <strong style="color: #ffffff; margin-bottom: 10px; display: block;">Você vai receber acesso instantâneo a:</strong>
+                        <strong style="color: #ffffff; margin-bottom: 10px; display: block;">O que você vai receber:</strong>
                         <ul style="margin-top: 10px; font-size: 12px; color: #d4d4d8; list-style: none; padding: 0;">
-                            <li style="margin-bottom: 6px;">✔️ O Guia Passo a Passo do Setup Invisível</li>
-                            <li style="margin-bottom: 6px;">✔️ A Engenharia de Tráfego Gringo</li>
-                            <li style="margin-bottom: 6px;">✔️ Menu Automático (Quanto cobrar)</li>
-                            <li>✔️ Rotas de Saque (Como trazer o dólar para o Brasil)</li>
+                            <li style="margin-bottom: 6px;">✔️ Passo a passo para começar de forma anônima</li>
+                            <li style="margin-bottom: 6px;">✔️ Estrutura para gerar renda em dólar sem exposição</li>
+                            <li style="margin-bottom: 6px;">✔️ Guia completo de configuração e segurança</li>
+                            <li>✔️ Estratégia para sair do zero e ter primeiros ganhos</li>
                         </ul>
                     </div>
 
-                    <p style="font-size:13px; color:#d4af37; text-align: center; margin-bottom: 20px; font-weight: 600;">
-                        <strong>Investimento único:</strong> R$ 67,90<br>
-                        <strong>Acesso:</strong> Imediato e Vitalício<br>
-                        <strong>Garantia Blindada:</strong> 7 dias ou seu dinheiro de volta
+                    <p style="font-size:12px; color:#d4af37; text-align: center; margin-bottom: 20px; font-weight: 600;">
+                        <strong>Investimento único:</strong> R$67,90<br>
+                        <strong>Acesso:</strong> Vitalício + Atualizações<br>
+                        <strong>Garantia:</strong> 7 dias ou 100% de volta
                     </p>
 
-                    <p style="font-size:11px; color:#7a7a81; margin-bottom:16px; text-align:center;">
-                        Algumas mulheres evoluem esse modelo ao ponto de gerar renda alta em dólar —<br>
-                        mas tudo começa com os primeiros passos simples.
-                    </p>
-
-                    <p style="font-size:13px; color:#d4af37; margin-bottom:24px; text-align:center; font-weight: 600;">
-                        Você não precisa começar grande.<br>
-                        Mas precisa começar certo.
+                    <p style="font-size:13px; color:#a8a8b0; margin-bottom:24px; font-style: italic;">
+                        Você não precisa entender tudo de tecnologia agora…<br>só precisa seguir o passo a passo.
                     </p>
 
                     <p style="font-size:14px; color:#ffffff; margin-bottom:12px; text-align:center; font-weight:700;">
-                        Você pode começar ainda hoje.
+                        Você já viu como funciona.
                     </p>
                     <p style="font-size:12px; color:#a8a8b0; margin-bottom:24px; text-align:center;">
-                        E quanto antes você subir seu perfil, antes os dólares começam a cair.
-                    </p>
-
-                    <div style="background: rgba(255, 59, 59, 0.05); border-left: 3px solid #ff3b3b; border-radius: 8px; padding: 14px; margin-bottom: 20px; text-align: left;">
-                        <strong style="color:#ffffff; font-size:12px;">⚠️ A escolha é sua:</strong>
-                        <p style="font-size:12px; color:#c8c8d0; margin-top:8px; line-height: 1.5;">
-                            Você pode fechar essa tela e continuar reclamando da falta de dinheiro, ou pode agir nas sombras e mudar a sua realidade.
-                        </p>
-                    </div>
-
-                    <p style="font-size:11px; color:#7a7a81; margin-bottom:16px; text-align:center;">
-                        +3.000 mulheres já começaram a operar no mercado internacional
+                        Agora a única diferença entre você e quem ganha em dólar…<br>
+                        é começar da forma certa.
                     </p>
 
                     <button class="resultado-cta" onclick="goToCheckout()">
-                        🔒 Desbloquear O Passo A Passo Agora
+                        🔒 Quero Começar o Passo a Passo
                     </button>
                     
                     <p style="font-size: 10px; color: #7a7a81; margin-top: 12px; text-align: center;">
-                        <strong style="color: #d4af37;">⏳ Acesso Imediato</strong> via E-mail e WhatsApp
+                        <strong style="color: #d4af37;">⏳ Acesso blindado</strong> • 7 dias de garantia incondicional
                     </p>
                 </div>
             `;
@@ -628,9 +842,12 @@
             document.getElementById('quizContainer').innerHTML = html;
         }
 
-        // ===== 8. CHECKOUT =====
+        // ===== 8. CHECKOUT (CAKTO INTEGRADO) =====
         function goToCheckout() {
-            window.location.href = 'https://seu-checkout-aqui.com/protocolo-sombra?src=' + userProfile;
+            // Conectado a Cakto
+            const checkoutUrl = 'https://pay.cakto.com.br/372zv2v_825183';
+            const urlWithProfile = checkoutUrl + '?src=' + userProfile + '&utm_source=protocolo-sombra&utm_medium=quiz-result&utm_campaign=direct';
+            window.location.href = urlWithProfile;
         }
 
         // CSS Extra
