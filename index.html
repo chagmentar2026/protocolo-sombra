@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,13 +18,12 @@
             box-sizing: border-box;
         }
 
-        /* ===== SISTEMA "NO SCROLL" ===== */
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(180deg, #0f0f11 0%, #1a1a1f 100%);
             color: #e0e0e0;
-            height: 100vh; /* Trava a altura na tela do usuário */
-            overflow: hidden; /* Mata o scroll da página principal */
+            height: 100vh;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
@@ -48,7 +48,6 @@
             50% { opacity: 1; }
         }
 
-        /* ===== HERO (ÚNICA COISA VISÍVEL NA LP) ===== */
         .hero {
             flex: 1;
             display: flex;
@@ -133,7 +132,6 @@
             z-index: 2;
         }
 
-        /* ===== MODAL & QUIZ (AONDE A MÁGICA ACONTECE) ===== */
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(0, 0, 0, 0.85);
@@ -159,14 +157,13 @@
             padding: 32px 20px;
             max-width: 440px;
             width: 100%;
-            max-height: 90vh; /* Permite rolar apenas dentro do modal */
-            overflow-y: auto; 
+            max-height: 90vh;
+            overflow-y: auto;
             animation: modal-slide-up 0.4s ease-out;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
             position: relative;
         }
 
-        /* Esconde a barra de rolagem estética no modal */
         .modal-content::-webkit-scrollbar { width: 6px; }
         .modal-content::-webkit-scrollbar-track { background: transparent; }
         .modal-content::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.3); border-radius: 10px; }
@@ -208,8 +205,10 @@
     <section class="hero">
         <div class="hero-content">
             <p style="font-size: 13px; color: #a8a8b0; margin-bottom: 16px; line-height: 1.6;">
-                Enquanto você trabalha o dia inteiro e ainda precisa pensar duas vezes antes de gastar R$50…<br>
-                <strong style="color: #ffffff;">outras estão recebendo em dólar — de forma discreta, no próprio quarto.</strong>
+                Enquanto você trabalha o mês inteiro… e o dinheiro continua curto…<br>
+                <strong style="color: #ffffff;">
+                existe gente recebendo em dólar todos os dias — de forma discreta, no próprio quarto.
+                </strong>
             </p>
 
             <h1>Ganhe em <span class="accent">dólar</span> sem precisar se expor.</h1>
@@ -241,7 +240,6 @@
     </div>
 
     <script>
-        // ===== 1. QUIZ DATA (PERGUNTAS NEUROLÓGICAS) =====
         const quizData = [
             {
                 q: "Hoje, qual dessas frases mais parece com sua realidade?",
@@ -369,109 +367,112 @@
             setTimeout(() => { clearInterval(msgInterval); renderResult(); }, 3800);
         }
 
-        // ===== RENDER RESULTADO (A CARTA DE VENDAS INTEIRA EMBUTIDA) =====
         function renderResult() {
-            // Dicionário Anti-Ban
             const w = {
                 of: atob('T25seUZhbnM='), cb: atob('Q2hhdHVyYmF0ZQ=='), pv: atob('UHJpdmFjeQ=='), ad: atob('YWR1bHRv'), gringo: atob('Z3Jpbmdvcw==')
             };
 
             let profileHtml = '';
             if (userProfile === 'medo') {
-                profileHtml = `<h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin-bottom: 12px; line-height: 1.2;">Você está travada pelo medo…</h2><p style="font-size: 13px; color: #c8c8d0; margin-bottom: 24px;">Mas sabe que precisa acessar o mercado certo, com segurança.</p>`;
+                profileHtml = `<h2 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; margin-bottom: 8px; font-weight: 900;">Você está bloqueada.</h2><p style="font-size: 13px; color: #d4af37; margin-bottom: 8px; font-weight: 700;">MAS… o que vem a seguir muda tudo.</p><p style="font-size: 12px; color: #c8c8d0;">Existe um caminho 100% seguro e anônimo.</p>`;
             } else if (userProfile === 'frustrada') {
-                profileHtml = `<h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin-bottom: 12px; line-height: 1.2;">Você está cansada de ganhar pouco…</h2><p style="font-size: 13px; color: #c8c8d0; margin-bottom: 24px;">Você trabalha muito, mas precisa acessar a moeda certa.</p>`;
+                profileHtml = `<h2 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; margin-bottom: 8px; font-weight: 900;">Você está no modelo errado.</h2><p style="font-size: 13px; color: #d4af37; margin-bottom: 8px; font-weight: 700;">Enquanto ganha Real…</p><p style="font-size: 12px; color: #c8c8d0;">…outras recebem Dólar a cada 40 minutos.</p>`;
             } else {
-                profileHtml = `<h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin-bottom: 12px; line-height: 1.2;">Você já está pronta.</h2><p style="font-size: 13px; color: #c8c8d0; margin-bottom: 24px;">Só falta a direção e a estrutura exata.</p>`;
+                profileHtml = `<h2 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; margin-bottom: 8px; font-weight: 900;">Você está a 1 hora de mudar.</h2><p style="font-size: 13px; color: #d4af37; margin-bottom: 8px; font-weight: 700;">Esta decisão define os próximos 12 meses.</p><p style="font-size: 12px; color: #c8c8d0;">Execute ou continue igual.</p>`;
             }
 
             let html = `
                 <div style="text-align: left; animation: fade-in-up 0.5s ease-out; padding-bottom: 10px;">
                     
-                    <div style="text-align: center;">
-                        <span style="display: inline-block; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); color: #d8b4fe; padding: 6px 12px; border-radius: 20px; font-size: 10px; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; letter-spacing: 1px;">Análise Concluída</span>
+                    <div style="text-align: center; margin-bottom: 24px;">
+                        <span style="display: inline-block; background: rgba(212,175,55,0.25); border: 1px solid rgba(212,175,55,0.5); color: #d4af37; padding: 8px 16px; border-radius: 20px; font-size: 10px; font-weight: 900; text-transform: uppercase; margin-bottom: 16px; letter-spacing: 1.5px;">🔓 SUA ANÁLISE REAL</span>
                         ${profileHtml}
                     </div>
 
-                    <div style="background: rgba(26,26,31,0.9); border-left: 4px solid #ff3b3b; border-radius: 8px; padding: 18px; margin-bottom: 24px; border-top: 1px solid rgba(255,59,59,0.2); border-right: 1px solid rgba(255,59,59,0.2); border-bottom: 1px solid rgba(255,59,59,0.2);">
-                        <strong style="font-size:14px; color:#ffffff; display:block; margin-bottom:12px; text-transform: uppercase;">A Verdade Que Ninguém Te Conta:</strong>
-                        <p style="font-size:13px; color:#c8c8d0; line-height:1.6; margin-bottom:10px;">Antes de você julgar… você precisa entender por que isso funciona. O dinheiro rápido e em dólar não vem de dancinhas.</p>
-                        <p style="font-size:13px; color:#c8c8d0; line-height:1.6;">Ele vem de um mercado pouco falado, mas extremamente lucrativo: o <strong>mercado ${w.ad}</strong>. Milhões de ${w.gringo} pagam todos os dias por interação privada em plataformas internacionais.</p>
+                    <div style="background: linear-gradient(135deg, rgba(255,59,59,0.1), rgba(255,59,59,0.05)); border-left: 4px solid #ff3b3b; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+                        <strong style="font-size: 14px; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 14px;">⚠️ O QUE NINGUÉM TE EXPLICA:</strong>
+                        <p style="font-size: 13px; color: #ffffff; line-height: 1.8; margin-bottom: 12px;"><strong>Existe algo que quase ninguém te explica.</strong> Te dizem: "trabalhe duro, enriqueça". Parcialmente verdade.</p>
+                        <p style="font-size: 13px; color: #d4af37; line-height: 1.8; font-weight: 600;">Existe um modelo diferente que não depende de salário, chefe ou horário fixo.</p>
+                        <p style="font-size: 13px; color: #c8c8d0; line-height: 1.8; margin-top: 10px;"><strong>E o mais importante: ele já está acontecendo todos os dias.</strong> Milhões de pessoas do exterior pagam regularmente por isso.</p>
                     </div>
 
-                    <p style="font-size:14px; color:#ffffff; font-weight: 700; margin-bottom:20px; text-align: center; line-height: 1.5;">
-                        Aqui está o ponto que quase ninguém entende:<br>
-                        <span style="color: #d4af37;">Você NÃO precisa se expor. O mercado paga pelo mistério.</span>
+                    <p style="font-size: 14px; color: #ffffff; font-weight: 800; margin-bottom: 20px; text-align: center; line-height: 1.4;">
+                        O ponto que ninguém entende:<br>
+                        <span style="color: #d4af37; font-size: 15px;">Você não precisa se expor.<br>O mistério é o que mais paga.</span>
                     </p>
 
-                    <div style="background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.2); border-radius: 8px; padding: 16px; margin-bottom: 28px;">
-                        <p style="font-size:12px; color:#ffffff; margin-bottom:10px;"><strong>Imagina isso acontecendo:</strong></p>
-                        <p style="font-size:12px; color:#a8a8b0; line-height: 1.6;">
-                            Você entra no <strong style="color:#d4af37;">${w.cb}</strong> (a porta de entrada mais segura). Você foca apenas do pescoço para baixo. O Brasil está 100% bloqueado nas configurações.<br><br>
-                            Uma pessoa manda $5… você vê aparecer na tela.<br>
-                            Outra manda $10… soma na sua conta.<br>
-                            Outra manda mais… e isso continua na mesma sessão.
+                    <div style="background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2); border-radius: 8px; padding: 20px; margin-bottom: 28px;">
+                        <p style="font-size:12px; color:#ffffff; margin-bottom:10px;"><strong>Imagina isso:</strong></p>
+                        <p style="font-size:12px; color:#c8c8d0; line-height: 1.8;">
+                            Você entra no ${w.cb} (seguro). Só pescoço para baixo. Brasil bloqueado.<br><br>
+                            Uma pessoa manda $5… você vê aparecer.<br>
+                            Outra manda $10… você vê somar.<br>
+                            Outra entra… e continua.<br><br>
+                            <strong style="color: #d4af37;">E isso acontece dentro da mesma sessão.</strong>
                         </p>
                     </div>
 
-                    <div style="margin-bottom: 28px; padding-top: 20px; border-top: 1px solid rgba(212,175,55,0.2);">
-                        <p style="font-size: 10px; color: #d4af37; margin-bottom: 16px; text-transform: uppercase; font-weight: 700; text-align: center; letter-spacing: 1px;">📍 O Caminho da Escala (Caso Real)</p>
-                        
-                        <div style="background: rgba(168,85,247,0.08); border-left: 3px solid #a855f7; padding: 16px; border-radius: 8px; margin-bottom: 24px;">
-                            <p style="font-size: 12px; color: #d4d4d8; margin-bottom: 12px; text-align: center;"><strong>Mayara M. (25, Rio de Janeiro)</strong></p>
-                            <p style="font-size: 11px; color: #d4d4d8; line-height: 1.8; text-align: center;">
-                                <strong style="color: #ffffff;">R$ 2.500 (Trabalho antigo)</strong><br>
+                    <div style="text-align: center; margin-bottom: 24px; padding: 20px 0; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
+                        <p style="font-size: 10px; color: #d4af37; text-transform: uppercase; font-weight: 900; margin-bottom: 12px; letter-spacing: 1px;">📍 PROGRESSÃO REAL</p>
+                        <div style="background: rgba(168,85,247,0.08); border-left: 3px solid #a855f7; padding: 16px; border-radius: 6px;">
+                            <p style="font-size: 13px; color: #d4d4d8; font-weight: 700; margin-bottom: 8px;">Mayara M. (25, Rio)</p>
+                            <p style="font-size: 12px; color: #d4d4d8; text-align: center; line-height: 2;">
+                                <strong style="color: #ffffff;">R$ 2.500</strong><br>
                                 <strong style="color: #d4af37;">↓</strong><br>
-                                <strong style="color: #c8c8d0;">R$ 480 (1º mês testando anônima)</strong><br>
+                                <strong>R$ 480 (1 mês)</strong><br>
                                 <strong style="color: #d4af37;">↓</strong><br>
-                                <strong style="color: #c8c8d0;">R$ 1.900 (2º mês ajustando)</strong><br>
+                                <strong>R$ 1.900 (2 meses)</strong><br>
                                 <strong style="color: #d4af37;">↓</strong><br>
-                                <strong style="color: #d4af37; font-size: 13px;">R$ 5.000+ (Atualmente no ${w.of} e ${w.pv})</strong>
+                                <strong style="color: #d4af37; font-size: 13px;">R$ 5.000+ (agora)</strong>
                             </p>
                         </div>
-
-                        <p style="font-size: 10px; color: #d4af37; margin-bottom: 8px; font-weight: 700; text-transform: uppercase;">💎 DÓLARES EM TEMPO REAL:</p>
-                        <img src="https://i.postimg.cc/vBpt35QC/Whats-App-Image-2026-03-30-at-16-45-49.jpg" alt="Tokens" style="width: 100%; border-radius: 8px; border: 1px solid rgba(212,175,55,0.3); margin-bottom: 20px;">
-                        
-                        <p style="font-size: 10px; color: #d4af37; margin-bottom: 8px; font-weight: 700; text-transform: uppercase;">💰 ENQUANTO VOCÊ DORME:</p>
-                        <img src="https://i.postimg.cc/FFdP3H9g/Whats-App-Image-2026-03-30-at-16-47-27.jpg" alt="Extrato" style="width: 100%; border-radius: 8px; border: 1px solid rgba(212,175,55,0.3); margin-bottom: 10px;">
                     </div>
 
-                    <div style="background: rgba(26,26,31,0.6); padding: 24px 20px; border-radius: 12px; border: 1px solid rgba(212,175,55,0.2); margin-bottom: 24px;">
-                        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #ffffff; text-align: center; margin-bottom: 20px;">O Protocolo Sombra</h3>
-                        
-                        <p style="font-size: 12px; color: #c8c8d0; margin-bottom: 16px; text-align: center;"><strong>Acesso imediato ao método exato:</strong></p>
-                        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: #d4d4d8; margin-bottom: 24px;">
-                            <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 6px;">🛡️ <strong>O Escudo:</strong> Como bloquear o Brasil e ser anônima</div>
-                            <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 6px;">🎭 <strong>A Fantasma:</strong> Como faturar sem mostrar o rosto</div>
-                            <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 6px;">👀 <strong>A Vitrine:</strong> Como atrair tráfego gratuito</div>
-                            <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 6px;">📈 <strong>A Escala:</strong> O caminho para mensalidades no ${w.of}</div>
-                        </div>
+                    <p style="font-size: 12px; color: #d4af37; margin-bottom: 10px; font-weight: 700; text-transform: uppercase; text-align: center;">💎 DÓLARES EM TEMPO REAL:</p>
+                    <img src="https://i.postimg.cc/vBpt35QC/Whats-App-Image-2026-03-30-at-16-45-49.jpg" alt="Tokens" style="width: 100%; border-radius: 8px; border: 1px solid rgba(212,175,55,0.3); margin-bottom: 16px;">
+                    
+                    <p style="font-size: 12px; color: #d4af37; margin-bottom: 10px; font-weight: 700; text-transform: uppercase; text-align: center;">💰 ENQUANTO VOCÊ DORME:</p>
+                    <img src="https://i.postimg.cc/FFdP3H9g/Whats-App-Image-2026-03-30-at-16-47-27.jpg" alt="Extrato" style="width: 100%; border-radius: 8px; border: 1px solid rgba(212,175,55,0.3); margin-bottom: 28px;">
 
-                        <div style="text-align: center; padding: 10px 0;">
-                            <p style="font-size: 22px; color: #d4af37; font-weight: 800; margin-bottom: 4px;">R$ 67,90</p>
-                            <p style="font-size: 11px; color: #a8a8b0;">Acesso Vitalício + Atualizações</p>
-                        </div>
-                    </div>
-
-                    <div style="background: rgba(255,255,255,0.03); border-radius:8px; padding:16px; margin-bottom:20px; text-align: center;">
-                        <p style="font-size:12px; color:#a8a8b0; margin-bottom:8px;">Isso não é automático. Não é instantâneo. E não é para quem desiste fácil.</p>
-                        <p style="font-size:12px; color:#ffffff; font-weight: bold;">Mas funciona para quem executa.</p>
-                    </div>
-
-                    <div style="background: rgba(255, 59, 59, 0.05); border-left: 3px solid #ff3b3b; border-radius: 8px; padding: 14px; margin-bottom: 24px;">
-                        <strong style="color:#ffffff; font-size:12px;">⚠️ A escolha é sua:</strong>
-                        <p style="font-size:12px; color:#c8c8d0; margin-top:6px; line-height: 1.5;">
-                            Se você fechar essa página agora, amanhã sua vida financeira continuará exatamente igual.
+                    <div style="background: rgba(255,255,255,0.03); border-radius:8px; padding:16px; margin-bottom:24px; border: 1px solid rgba(255,255,255,0.05);">
+                        <p style="font-size:12px; color:#a8a8b0; margin-bottom:10px; line-height: 1.7;">
+                            Isso não é automático.<br>
+                            Não é instantâneo.<br>
+                            E não é para quem não executa.
+                        </p>
+                        <p style="font-size:12px; color:#ffffff; font-weight: 600; line-height: 1.7;">
+                            Mas funciona para quem segue o processo certo.
                         </p>
                     </div>
 
-                    <button style="width: 100%; padding: 18px; background: linear-gradient(135deg, #d4af37 0%, #a855f7 100%); color: #0f0f11; border: none; border-radius: 10px; font-size: 16px; font-weight: 800; cursor: pointer; font-family: 'Inter', sans-serif; box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);" onclick="goToCheckout()">
-                        🔒 Quero Começar Agora
+                    <div style="background: rgba(26,26,31,0.8); padding: 24px 20px; border-radius: 12px; border: 1px solid rgba(212,175,55,0.25); margin-bottom: 24px;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: #ffffff; text-align: center; margin-bottom: 20px; font-weight: 900;">Protocolo Sombra</h3>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: #d4d4d8; margin-bottom: 24px;">
+                            <div style="background: rgba(0,0,0,0.6); padding: 12px; border-radius: 6px; border-left: 3px solid #d4af37;"><strong>✔️ Como entrar de forma anônima</strong> (sem exposição)</div>
+                            <div style="background: rgba(0,0,0,0.6); padding: 12px; border-radius: 6px; border-left: 3px solid #d4af37;"><strong>✔️ Como configurar tudo do zero</strong> (mesmo sem experiência)</div>
+                            <div style="background: rgba(0,0,0,0.6); padding: 12px; border-radius: 6px; border-left: 3px solid #d4af37;"><strong>✔️ Como acessar o fluxo em dólar</strong> (internacional)</div>
+                            <div style="background: rgba(0,0,0,0.6); padding: 12px; border-radius: 6px; border-left: 3px solid #d4af37;"><strong>✔️ Como dar os primeiros passos hoje</strong> (guia passo a passo)</div>
+                        </div>
+
+                        <div style="text-align: center; padding: 16px 0; border-top: 1px solid rgba(212,175,55,0.2);">
+                            <p style="font-size: 24px; color: #d4af37; font-weight: 900;">R$ 67,90</p>
+                            <p style="font-size: 11px; color: #a8a8b0;">Acesso Vitalício | 7 dias ou 100% de volta</p>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255, 59, 59, 0.06); border-left: 3px solid #ff3b3b; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+                        <p style="font-size: 12px; color: #ffffff; margin-bottom: 8px; font-weight: 700;"><strong>⚠️ SE VOCÊ FECHAR AGORA:</strong></p>
+                        <p style="font-size: 12px; color: #c8c8d0; line-height: 1.7;">Amanhã sua vida continua igual. Mês que vem igual. Ano que vem? Ainda igual.</p>
+                        <p style="font-size: 12px; color: #d4af37; margin-top: 10px; font-weight: 700;">Ou você entra agora e em 90 dias tudo muda.</p>
+                    </div>
+
+                    <button style="width: 100%; padding: 20px; background: linear-gradient(135deg, #d4af37 0%, #a855f7 100%); color: #0f0f11; border: none; border-radius: 10px; font-size: 17px; font-weight: 900; cursor: pointer; font-family: 'Inter', sans-serif; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35); letter-spacing: 0.5px;" onclick="goToCheckout()">
+                        🔒 Começar de forma discreta agora
                     </button>
                     
                     <p style="font-size: 10px; color: #7a7a81; margin-top: 16px; text-align: center;">
-                        <strong style="color: #d4af37;">⏳ 7 dias de garantia incondicional</strong> • Acesso imediato no e-mail
+                        <strong style="color: #d4af37;">Acesso imediato</strong> • Processo simples • Sem exposição
                     </p>
                 </div>
             `;
@@ -479,7 +480,6 @@
         }
 
         function goToCheckout() {
-            // Cole seu link de checkout da Kiwify ou Hotmart aqui!
             const url = 'https://pay.cakto.com.br/372zv2v_825183?src=' + userProfile + '&utm_source=protocolo-sombra';
             window.location.href = url;
         }
